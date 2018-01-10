@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const request = require('request');
+const ACTESAIncidentsGeoJSON = require('../');
+
+if (process.argv.length < 3) {
+    throw 'Usage: act-esa-incidents-geojson <act-esa-incidents.geojson>';
+    process.exit(1);
+}
+const upstreamFeedURL = 'https://esa.act.gov.au/feeds/allincidents.json';
+const outputFile = process.argv[2];
+
+request(upstreamFeedURL, function (err, res, body) {
+
+    // check for any errors in the HTTP request
+    if (err || !res || res.statusCode !== 200) {
+        if (err) console.error(err);
+        if (res) console.error('Status Code: ' + res.statusCode);
+        throw 'Error retrieving feed';
+        process.exit(1);
+    }
+
+    // parse the upstream GeoJSON
+    var json;
+    try {
+        json = JSON.parse(body);
+    } catch (Error) {
+        throw 'Error parsing JSON response body';
+        process.exit(1);
+    }
+
+    // convert to GeoJSON feed
+    var geojson = ACTESAIncidentsGeoJSON.toGeoJSON(json)
+
+    // save the GeoJSON to a file
+    fs.writeFileSync(outputFile, JSON.stringify(geojson), 'utf8');
+});

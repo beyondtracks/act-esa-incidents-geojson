@@ -1,0 +1,2 @@
+# update every 5 minutes
+*/5 *  *   *   *  root  act-esa-incidents-geojson /srv/www/act-esa-incidents.geojson

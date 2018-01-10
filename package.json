@@ -1,0 +1,25 @@
+{
+  "name": "@beyondtracks/act-esa-incidents-geojson",
+  "version": "1.0.0",
+  "description": "ACT ESA GeoJSON Feed",
+  "main": "index.js",
+  "author": "Andrew Harvey <andrew@alantgeo.com.au>",
+  "license": "MIT",
+  "repository": "github:beyondtracks/act-esa-incidents-geojson",
+  "scripts": {
+    "geojsonhint": "./bin/act-esa-incidents-geojson act-esa-incidents.geojson; geojsonhint < act-esa-incidents.geojson"
+  },
+  "dependencies": {
+    "@turf/helpers": "^5.1.5",
+    "geojson-precision": "^0.4.0",
+    "geojson-rewind": "^0.3.0",
+    "request": "^2.83.0",
+    "xtend": "^4.0.1"
+  },
+  "devDependencies": {
+    "@mapbox/geojsonhint": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=6.12.0"
+  }
+}
