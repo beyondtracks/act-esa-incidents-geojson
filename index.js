@@ -47,6 +47,17 @@ module.exports = {
             }, {});
             properties = extend(descriptionItems, properties); // use this order to avoid description properties overriding 1st level properties
 
+            // remove redundant incident field
+            if (properties.title === properties.incident) {
+                delete properties.incident;
+            }
+
+            // clean up location trailing whitespace
+            properties.location = properties.location.replace(/[, ]*$/, '');
+
+            // icon is just type and status
+            delete properties.icon;
+
             var id = item.guid;
 
             var pointCoordinates;
