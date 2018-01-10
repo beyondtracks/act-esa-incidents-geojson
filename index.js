@@ -67,7 +67,7 @@ module.exports = {
             }
             if (item.polygon && item.polygon.type === "Polygon" && item.polygon.coordinates && item.polygon.coordinates.length > 1) {
                 var outer = [];
-                for (var i = 0; i += 2; i < item.polygon.coordinates.length) {
+                for (var i = 0; i < item.polygon.coordinates.length; i += 2) {
                     var lat = Number(item.polygon.coordinates[i]);
                     var lng = Number(item.polygon.coordinates[i + 1]);
                     outer.push([lng, lat]);
