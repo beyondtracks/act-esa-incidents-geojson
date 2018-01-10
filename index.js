@@ -37,7 +37,7 @@ module.exports = {
                     var key = split.shift();
                     var value = split.join(':');
                     return {
-                        key: key.trim().toLowerCase().replace(/ /, '-'),
+                        key: key.trim().toLowerCase().replace(/ /g, '-'),
                         value: value.trim()
                     };
                 }
