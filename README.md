@@ -40,3 +40,36 @@ without any notice causing issues. Use at your own risk.
 THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
 IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+# Schema
+
+Possible values for `status`:
+ * `Under control`
+ * `Being controlled`
+ * `Out of control`
+ * `Out / Completed`
+ * `Resource allocation Pending`
+ * `Finished`
+ * `Units On route`
+ * `On Scene`
+
+Possible values for `type`:
+ * `CAR FIRE`
+ * `CONFINED SPACE RESCUE`
+ * `STRUCTURE FIRE`
+ * `ELECTRICAL THREAT OR POWER LINES DOWN`
+ * `LPG CYLINDER INCIDENT`
+ * `GAS PIPELINE INCIDENT`
+ * `GRASS AND BUSH FIRE`
+ * `HAZARD REDUCTION BURN`
+ * `HAZMAT INCIDENT`
+ * `HOUSE FIRE`
+ * `INDUSTRIAL RESCUE`
+ * `LANDFILL TIP FIRES`
+ * `MOTOR VEHICLE ACCIDENT`
+ * `PEDESTRIAN OR PUSHBIKE ACCIDENT`
+ * `RAIL ACCIDENT`
+ * `RUBBISH FIRE`
+ * `TRANSPORT FIRE`
+ * `TRENCH COLLAPSE RESCUE`
+ * `VERTICAL  RESCUE`
